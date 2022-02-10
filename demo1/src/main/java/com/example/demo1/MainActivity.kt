@@ -7,6 +7,19 @@ import android.os.SystemClock
 import android.view.View
 import android.widget.TextView
 import com.example.demo.R
+/**
+ *
+ * @Author： LiuZhouLiang
+ *
+ * @Time： 2022/2/10 4:27 下午
+ *
+ * @Description： 
+ *
+ * @Param 
+ *
+ * @Return 
+ *
+ */
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

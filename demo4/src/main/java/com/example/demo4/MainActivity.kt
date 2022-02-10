@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onClick(v: View?) {
       Toast.makeText(this,"start",Toast.LENGTH_LONG).show()
-//        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
-        sendBroadcastWithPermissions()
+        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
+//        sendBroadcastWithPermissions()
 
     }
   private  fun sendBroadcastWithPermissions() {
