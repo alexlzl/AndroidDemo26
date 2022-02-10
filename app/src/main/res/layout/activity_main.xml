@@ -1,0 +1,10 @@
+<LinearLayout xmlns:myns="http://schemas.android.com/apk/res/android"
+    myns:layout_width="match_parent"
+    myns:layout_height="match_parent" >
+    <TextView
+        myns:layout_width="wrap_content"
+        myns:layout_height="wrap_content"
+        myns:layout_gravity="center"
+        myns:text="New Text"
+        myns:id="@+id/textView" />
+</LinearLayout>
