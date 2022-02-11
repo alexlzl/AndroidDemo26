@@ -22,8 +22,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onClick(v: View?) {
       Toast.makeText(this,"start",Toast.LENGTH_LONG).show()
-//        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
-        sendBroadcastWithPermissions()
+
+        //显示发送信息给静态注册的广播
+        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
+        //隐式发送信息给动态注册的广播
+//        sendBroadcastWithPermissions()
 
     }
   private  fun sendBroadcastWithPermissions() {
