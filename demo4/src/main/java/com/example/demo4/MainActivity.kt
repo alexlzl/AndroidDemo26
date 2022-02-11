@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onClick(v: View?) {
       Toast.makeText(this,"start",Toast.LENGTH_LONG).show()
-        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
-//        sendBroadcastWithPermissions()
+//        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
+        sendBroadcastWithPermissions()
 
     }
   private  fun sendBroadcastWithPermissions() {
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             "this is data from broadcast " + Calendar.getInstance().get(Calendar.SECOND)
         )
         intent.action = BROADCAST_ACTION_DISC //设置你这个广播的action，只有和这个action一样的接受者才能接受者才能接收广播
+        intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
         sendBroadcast(intent, null) //发送广播
     }
 }
