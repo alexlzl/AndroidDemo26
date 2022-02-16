@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
       Toast.makeText(this,"start",Toast.LENGTH_LONG).show()
 
         //显示发送信息给静态注册的广播
-        sendBroadcast(Intent("com.test.broadcast").setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
+        sendBroadcast(Intent("com.test.broadcast").setFlags(Intent.FLAG_RECEIVER_FOREGROUND).setComponent(ComponentName("com.example.demo3","com.example.demo3.MyBroadcastReceiver")))
         //隐式发送信息给动态注册的广播
 //        sendBroadcastWithPermissions()
 

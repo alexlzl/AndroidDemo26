@@ -1,0 +1,71 @@
+Activity启动过程主要涉及哪些类
+
+为了防止后续大量的源码分析过程中影响整体的链路关系，在分析完源码后，我总结了一下相关类，以及调用方法，具体看以下描述。
+启动一个Activity一般通过startActivity()
+
+startActivity(new Intent(OneActivity.this,TwoActivity.class));
+Activity
+startActivity()
+startActivityForResult()
+
+Instrumentation 用于实现应用程序检测代码的基类。当在打开程序指令的时候运行，这个类将在任何应用程- 序代码之前为您实例化，可以监视系统与应用程序的所有交互。在AndroidManifest.xml文件的<instrumentation>标记。
+execStartActivity()
+
+ActivityManagerService
+startActivity()
+startActivityAsUser()
+
+ActivityStarter 用于解释如何启动活动。此类记录所有逻辑，用于确定如何将意图和标志转换为Activity以及关联的任务和堆栈。
+execute()
+startActivity()
+startActivityUnchecked()
+
+ActivityStackSupervisor
+resumeFocusedStackTopActivityLocked()
+
+ActivityStack 单个Activity堆栈的状态和管理
+resumeTopActivityUncheckedLocked()
+resumeTopActivityInnerLocked()
+
+ActivityStackSupervisor Activity堆栈管理
+startSpecificActivityLocked()
+realStartActivityLocked()
+
+ClientTransaction 一种容器，它保存一系列消息（比如声明周期的状态），这些消息可以发送给client。
+ClientTransaction.obtain(app.thread, r.appToken)//初始化
+addCallback((LaunchActivityItem.obtain(new Intent(r.intent),...)
+
+ClientLifecycleManager //该类能够组合多个client生命周期转换请求/回调，并将它们作为单个事务执行
+scheduleTransaction(clientTransaction)
+
+ClientTransaction
+schedule()
+
+ApplicationThread
+scheduleTransaction()
+
+ActivityThread 它管理应用程序进程中主线程中执行的调度和执行活动、广播以及活动管理器请求的其他操作。
+scheduleTransaction()
+sendMessage(ActivityThread.H.EXECUTE_TRANSACTION, transaction);
+
+ClientTransactionHandler //ActivityThread 继承 ClientTransactionHandler，所以调用了父类scheduleTransaction（）
+scheduleTransaction()
+
+TransactionExecutor 以正确的顺序管理事务执行
+execute()
+executeCallbacks()
+transaction.getCallbacks().get(i).execute()
+
+LaunchActivityItem 请求启动Activity
+execute()
+
+ActivityThread
+handleLaunchActivity()
+performLaunchActivity()
+
+Instrumentation
+callActivityOnCreate()
+
+Activity
+onCreate()
+

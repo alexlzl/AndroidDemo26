@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(MainActivity.this,
-                    "receive broadcast", Toast.LENGTH_LONG).show();
+                    "动态注册的广播", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -17,6 +17,6 @@ import android.widget.Toast
  */
 class MyBroadcastReceiver:BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        Toast.makeText(context,"test",Toast.LENGTH_LONG).show()
+        Toast.makeText(context,"静态注册的广播",Toast.LENGTH_LONG).show()
     }
 }
