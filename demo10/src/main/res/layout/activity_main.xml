@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/activity_main2_scene"
-    tools:context=".MainActivity2">
+    app:layoutDescription="@xml/activity_main_scene"
+    app:showPaths="true"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="show"
-        android:text="app_text1"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp" />
+    <View
+        android:id="@+id/btn6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="Button6"/>
+
+
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
