@@ -1,0 +1,136 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+project.rootProject.uri('test.gradle')
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+gradle.addBuildListener(new BuildListener() {
+    void buildStarted(Gradle var1) {
+        println '开始构建'
+    }
+    void settingsEvaluated(Settings var1) {
+        println 'settings评估完成（settins.gradle中代码执行完毕）'
+        // var1.gradle.rootProject 这里访问Project对象时会报错，还未完成Project的初始化
+    }
+    void projectsLoaded(Gradle var1) {
+        println '项目结构加载完成（初始化阶段结束）'
+        println '初始化结束，可访问根项目：' + var1.gradle.rootProject
+    }
+    void projectsEvaluated(Gradle var1) {
+        println '所有项目评估完成（配置阶段结束）'
+    }
+    void buildFinished(BuildResult var1) {
+        println '构建结束 '
+    }
+})
+//task 'ms1' {
+//    println("=================task ms1 added=================")
+//}
+//
+////第一种方法，直接使用project的task()方法创建
+//task helloTask{
+//    println 'this is helloTask'
+//}
+//
+//
+////第二种方法，使用TaskContainer创建task
+//this.tasks.create(name:'helloTask2'){
+//    println 'this is helloTask2'
+//}
+//
+////第一种方法，直接使用project的task()方法创建
+////第一种配置方法，创建的时候就配置task的group和description
+////description就是个说明，类似对注释
+//task helloTask11(group:'hard',description:'task learn'){
+//    println 'this is helloTask'
+//}
+//
+//
+////第二种方法，使用TaskContainer创建task
+//this.tasks.create(name:'helloTask22'){
+//    //第二种配置方式：直接在闭包中配置
+//    setGroup('hard')
+//    setDescription('task learn')
+//    println 'this is helloTask2'
+//}
+////第一种方法，直接使用project的task()方法创建
+////配置的时候就配置task的group和description
+////description就是个说明，类似对注释
+//task helloTask33(group:'hard',description:'task learn'){
+//
+//    //直接写在闭包里面的，是在配置阶段就执行的
+//    println 'this is helloTask'
+//
+//    doFirst {
+//        println 'task in do first'  //运行任务时，会第一个执行
+//    }
+//
+//    doLast {
+//        println 'task in do last'   //运行任务时，会最后一个执行
+//    }
+//}
+//def startBuildTime
+//def endBuildTime
+//this.afterEvaluate {
+//        //配置过程结束，保证要找的task都已经配置完毕
+//    Project project ->
+//        def preBuildTask = project.tasks.getByName('preBuild')
+//        preBuildTask.doFirst {
+//            startBuildTime = System.currentTimeMillis()
+//            println "start time is ${startBuildTime}"
+//        }
+//        def endBuildTask = project.tasks.getByName('mergeDebugNativeDebugMetadata')
+//        endBuildTask.doLast {
+//            endBuildTime = System.currentTimeMillis()
+//            println "the build time is ${endBuildTime - startBuildTime}"
+//        }
+//}
+//afterEvaluate{ project ->
+//    def buildTask = project.tasks.findByName('build')
+//    if(buildTask == null){
+//        throw new GradleException('the build task is not found')
+//    }
+//
+//    //在buildTask后添加doLast，并在里面执行printTask
+//    //这样我们就把自定义的task挂到build构建过程中了
+//    buildTask.doLast {
+//        printTask.execute()
+//    }
+//}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

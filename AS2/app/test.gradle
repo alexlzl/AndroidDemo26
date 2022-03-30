@@ -1,0 +1,18 @@
+task taskB {
+    doLast {
+        println '我是taskB'
+    }
+}
+
+//定义一个taskA
+task taskA() {
+    doLast {
+        println '我是taskA'
+    }
+}
+
+//定义之后，再依赖于taskB
+taskA.dependsOn taskB
+
+
+

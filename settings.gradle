@@ -1,0 +1,24 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "Demo"
+include ':app'
+include ':myapplication'
+include ':demo1'
+include ':demo2'
+include ':demo3'
+include ':demo4'
+include ':demo5'
+include ':demo6'
+include ':demo7'
+include ':demo8'
+include ':demo9'
+include ':demo10'
+include ':Behavior'
+include ':Scroller'
+include ':Scroller1'

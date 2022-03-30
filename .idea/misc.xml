@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="Behavior/src/main/res/layout/activity_main.xml" value="0.5291666666666667" />
+        <entry key="Scroller/src/main/res/layout/activity_main.xml" value="0.5479166666666667" />
+        <entry key="Scroller1/src/main/res/layout/activity_main.xml" value="0.5479166666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="demo1/src/main/res/layout/activity_main.xml" value="0.4708333333333333" />
+        <entry key="demo1/src/main/res/layout/activity_main2.xml" value="0.45729166666666665" />
+        <entry key="demo1/src/main/res/layout/activity_main3.xml" value="0.45729166666666665" />
+        <entry key="demo10/src/main/res/layout/activity_main.xml" value="0.45729166666666665" />
+        <entry key="demo2/src/main/res/drawable/bg_toast.xml" value="0.47760416666666666" />
+        <entry key="demo2/src/main/res/layout/activity_main.xml" value="0.45729166666666665" />
+        <entry key="demo2/src/main/res/layout/layout_lstoast.xml" value="0.45729166666666665" />
+        <entry key="demo3/src/main/res/layout/activity_main.xml" value="0.45729166666666665" />
+        <entry key="demo4/src/main/res/layout/activity_main.xml" value="0.45729166666666665" />
+        <entry key="demo5/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="demo6/src/main/res/drawable/ic_launcher_background.xml" value="0.4585" />
+        <entry key="demo6/src/main/res/layout/activity_main.xml" value="0.45729166666666665" />
+        <entry key="demo6/src/main/res/layout/activity_main2.xml" value="0.45729166666666665" />
+        <entry key="demo8/src/main/res/layout/activity_main.xml" value="0.5291666666666667" />
+        <entry key="demo9/src/main/res/layout/activity_main.xml" value="0.4588541666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
